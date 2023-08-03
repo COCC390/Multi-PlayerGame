@@ -2,7 +2,7 @@
     "name": "CharacterInputControl",
     "maps": [
         {
-            "name": "Movement",
+            "name": "Player",
             "id": "715d55bf-a7ae-4750-8e60-22bffb900283",
             "actions": [
                 {
@@ -121,34 +121,6 @@
                     "processors": "",
                     "groups": "KeyboardAndMouse",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Attack",
-            "id": "f8146d7a-e7bf-420e-81c6-073167ae8f2e",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "24a2447e-a1e1-4e06-8e1b-7c3803587d95",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "914d3459-1fe7-41ab-ace9-16b9514840fd",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardAndMouse",
-                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
