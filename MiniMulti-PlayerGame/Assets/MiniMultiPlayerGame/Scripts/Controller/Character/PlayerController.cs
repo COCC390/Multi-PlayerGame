@@ -6,24 +6,26 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private StateMachine _playerStateMachine;
     [SerializeField] private PlayerInput _playerInput;
 
-    [SerializeField] private NewStateFactory _stateFactory;
+    [SerializeField] private StateCreator _stateCreator;
 
-    void Start()
+    [SerializeField] private float _walkSpeed = 2f;
+    private Vector3 _moveDir;
+
+    private void FixedUpdate()
     {
-        
+        transform.position += _moveDir * _walkSpeed * Time.deltaTime;
     }
 
-    void Update()
+    public void GroundMovement(InputAction.CallbackContext context)
     {
-        
-    }
+        Vector2 moveDirIn2d = context.ReadValue<Vector2>();
+        _moveDir = new Vector3(moveDirIn2d.x, transform.position.y, moveDirIn2d.y);
 
-    private void OnGroundMove(InputValue inputValue) 
-    {
-        Debug.Log("OnGroundMove value" + inputValue);
+        IState nextState = _stateCreator.CreateNextFactory();
 
-        _stateFactory.CreateNextFactory();
-    }
+        _playerStateMachine.ChangeStateAction(nextState);
+    }    
 }

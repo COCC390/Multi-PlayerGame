@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace MiniMultiPlayerGame.StateMachine 
 {
-    public class NewStateFactory : MonoBehaviour 
+    public class StateCreator : MonoBehaviour 
     {
         [SerializeField] private List<ScriptableObject> _states; // save switch to state
+        [SerializeField] private StateContext _currentStateContext;
 
-        public IState CreateNextFactory() 
+        public IState CreateNextFactory(/*StateContext stateContext*/) 
         {
             IState nextState = null;
 
@@ -25,7 +26,7 @@ namespace MiniMultiPlayerGame.StateMachine
     }
 
     /* To switch to new state we can: 
-     * PlayerInput + CurrentState + CurrentContext = NewState
+     * PlayerInput + CurrentState + CurrentContext (known as condition) = NewState
      * CurrentState we can compare it to list state can switch to
      * CurrentContext we can compare it to list context can switch to
      */

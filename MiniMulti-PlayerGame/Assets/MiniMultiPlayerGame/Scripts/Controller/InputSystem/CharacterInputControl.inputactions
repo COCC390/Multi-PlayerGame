@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "GroundMove",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "8f42300c-377d-4c9d-b1d3-b3ccd79df91f",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
