@@ -1,22 +1,25 @@
+using MiniMultiPlayerGame.StateMachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MiniMultiPlayerGame.StateMachine;
 
-public class Idle : IState
+public class Walk : IState
 {
-    private PlayerAnimationController _animController;
+    private float _walkSpeed;
+    private Vector3 _direction;
+    private Transform _playerTransform;
+
     private PlayerVFXController _playerVFXController;
+    private PlayerAnimationController _playerAnimController;
 
     public void AddControl<T>(T control)
     {
-        object convert = (T)(object) control;
-        _playerVFXController = (PlayerVFXController)convert;
+        //  
     }
 
     public void OnStateEnter()
     {
-        
+        _playerVFXController 
     }
 
     public void OnStateExit()
@@ -28,5 +31,4 @@ public class Idle : IState
     {
         throw new System.NotImplementedException();
     }
-
 }

@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
         Vector2 moveDirIn2d = context.ReadValue<Vector2>();
         _moveDir = new Vector3(moveDirIn2d.x, transform.position.y, moveDirIn2d.y);
 
-        IState nextState = _stateCreator.CreateNextFactory();
+        IState nextState = _stateCreator.CreateNextState();
 
-        _playerStateMachine.ChangeStateAction(nextState);
+        _playerStateMachine.ChangeStateAction(new Walk());
     }    
 }

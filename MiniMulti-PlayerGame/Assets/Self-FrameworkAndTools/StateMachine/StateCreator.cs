@@ -9,7 +9,7 @@ namespace MiniMultiPlayerGame.StateMachine
         [SerializeField] private List<ScriptableObject> _states; // save switch to state
         [SerializeField] private StateContext _currentStateContext;
 
-        public IState CreateNextFactory(/*StateContext stateContext*/) 
+        public IState CreateNextState(/*StateContext stateContext*/) 
         {
             IState nextState = null;
 
