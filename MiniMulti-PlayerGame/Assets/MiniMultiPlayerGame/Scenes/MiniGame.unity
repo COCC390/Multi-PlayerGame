@@ -1071,9 +1071,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9676d8d95312c4ebfcbbdc9ebc112c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerStateMachine: {fileID: 0}
+  _playerStateMachine: {fileID: 550883346}
   _playerInput: {fileID: 550883348}
-  _stateCreator: {fileID: 0}
+  _playerVFXController: {fileID: 550883350}
+  _playerAnimController: {fileID: 550883349}
   _walkSpeed: 2
 --- !u!114 &550883348
 MonoBehaviour:
@@ -1149,6 +1150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8d00811aebaf448a1cdde2670f7de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vFXes:
+  - name: 0
+    particleSystem: {fileID: 0}
+  _currentVFXes: 
 --- !u!114 &550883351
 MonoBehaviour:
   m_ObjectHideFlags: 0

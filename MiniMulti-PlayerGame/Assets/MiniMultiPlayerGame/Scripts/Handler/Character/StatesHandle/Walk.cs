@@ -5,30 +5,40 @@ using UnityEngine;
 
 public class Walk : IState
 {
-    private float _walkSpeed;
-    private Vector3 _direction;
     private Transform _playerTransform;
 
-    private PlayerVFXController _playerVFXController;
+    private PlayerController _playerController;
+    private VFXController _playerVFXController;
     private PlayerAnimationController _playerAnimController;
+
+    public Walk() { }
+
+    public Walk(Transform playerTransform, PlayerController playerController, VFXController playerVFXController, PlayerAnimationController playerAnimController)
+    {
+        _playerTransform = playerTransform;
+        _playerController = playerController;
+        _playerVFXController = playerVFXController;
+        _playerAnimController = playerAnimController;
+    }
 
     public void AddControl<T>(T control)
     {
-        //  
+        object convertControl = (T)(object)control;
+        _playerVFXController = (PlayerVFXController)convertControl;
     }
 
     public void OnStateEnter()
     {
-        _playerVFXController 
+        
     }
 
     public void OnStateExit()
     {
-        throw new System.NotImplementedException();
     }
 
     public void OnStateUpdate()
     {
-        throw new System.NotImplementedException();
+        _playerVFXController.PlayVFX(VFXName.Walk);
+        _playerTransform.position += _playerController.GetMoveDir * _playerController.GetWalkSpeed * Time.deltaTime;
     }
 }
