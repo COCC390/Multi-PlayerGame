@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 moveDirIn2d = context.ReadValue<Vector2>();
 
-        Debug.Log("dir in 2d " + moveDirIn2d);
-
         IState newState;
 
         _moveDir = new Vector3(moveDirIn2d.x, transform.position.y, moveDirIn2d.y);

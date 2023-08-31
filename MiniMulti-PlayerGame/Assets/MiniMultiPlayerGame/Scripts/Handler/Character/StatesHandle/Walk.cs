@@ -36,6 +36,8 @@ public class Walk : IState
        
         _playerVFXController.PlayVFX(VFXName.Walk);
         _playerTransform.position += _playerController.GetMoveDir * _playerController.GetWalkSpeed * Time.deltaTime;
+
+        LookAtWalkDirection(_playerTransform, _playerController.GetMoveDir);
     }
     #endregion
 
@@ -45,9 +47,9 @@ public class Walk : IState
 
     }
 
-    private void LookAtWalkDirection()
+    private void LookAtWalkDirection(Transform playerTransform, Vector3 direction)
     {
-
+        playerTransform.forward = Vector3.Normalize(direction);
     }
 
     #endregion

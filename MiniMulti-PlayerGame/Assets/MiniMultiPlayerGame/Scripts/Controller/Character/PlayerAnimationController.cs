@@ -22,11 +22,7 @@ public class PlayerAnimationController : MonoBehaviour
         
     }
 
-    public void AnimationPlay(string animName)
-    {
-        Debug.Log("run anim: ");
-        _anim.Play(animName);
-    }
+    public void AnimationPlay(string animName) => _anim.Play(animName);
 
     public void AnimationStop()
     {
