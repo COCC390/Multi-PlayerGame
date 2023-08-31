@@ -21,15 +21,10 @@ public class Walk : IState
         _playerAnimController = playerAnimController;
     }
 
-    public void AddControl<T>(T control)
-    {
-        object convertControl = (T)(object)control;
-        _playerVFXController = (PlayerVFXController)convertControl;
-    }
-
+    #region State implement
     public void OnStateEnter()
     {
-        
+        _playerAnimController.AnimationPlay(PlayerAnim.Walk.ToString());
     }
 
     public void OnStateExit()
@@ -38,7 +33,22 @@ public class Walk : IState
 
     public void OnStateUpdate()
     {
+       
         _playerVFXController.PlayVFX(VFXName.Walk);
         _playerTransform.position += _playerController.GetMoveDir * _playerController.GetWalkSpeed * Time.deltaTime;
     }
+    #endregion
+
+    #region State function
+    private void DoWalk()
+    {
+
+    }
+
+    private void LookAtWalkDirection()
+    {
+
+    }
+
+    #endregion
 }

@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerAnim
+{
+    Idle,
+    Walk
+}
+
 public class PlayerAnimationController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Animator _anim;
     void Start()
     {
         
@@ -14,6 +20,17 @@ public class PlayerAnimationController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AnimationPlay(string animName)
+    {
+        Debug.Log("run anim: ");
+        _anim.Play(animName);
+    }
+
+    public void AnimationStop()
+    {
+
     }
 
     private void OnAnimationPlay(Animation animation) => animation.Play();

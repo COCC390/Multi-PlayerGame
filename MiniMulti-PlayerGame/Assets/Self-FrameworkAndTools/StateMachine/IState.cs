@@ -6,8 +6,6 @@ namespace MiniMultiPlayerGame.StateMachine
 {
     public interface IState
     {
-        public void AddControl<T>(T control);
-
         public void OnStateEnter();
         public void OnStateUpdate();
         public void OnStateExit();

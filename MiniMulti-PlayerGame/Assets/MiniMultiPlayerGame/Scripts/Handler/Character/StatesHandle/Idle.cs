@@ -14,15 +14,10 @@ public class Idle : IState
         _playerVFXController = playerVFXController;
     }
 
-    public void AddControl<T>(T control)
-    {
-        object convertControl = (T)(object) control;
-        _playerVFXController = (PlayerVFXController)convertControl;
-    }
-
     public void OnStateEnter()
     {
         _playerVFXController.PlayVFX("idle vfx");
+        _animController.AnimationPlay(PlayerAnim.Idle.ToString());
     }
 
     public void OnStateExit()
